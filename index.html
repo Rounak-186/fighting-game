@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Game-1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Press Start 2P", sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .big-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .health-bar {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .player-health-bar {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border-color: white;
+            border-style: solid;
+            border-width: 4px 0px 4px 4px;
+            border-radius: 15px 0px 0px 15px;
+
+        }
+
+        .player-fullHealth {
+            background-color: red;
+            height: 30px;
+            width: 100%;
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .player-health-remaining {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            background: #818CF8;
+            border-radius: 10px 0px 0px 10px;
+            transition: 0.3s;
+        }
+
+        .timer {
+            background-color: rgb(53, 52, 52);
+            width: 100px;
+            height: 50px;
+            border: 4px solid white;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .enemy-health-bar {
+            position: relative;
+            width: 100%;
+            border-color: white;
+            border-style: solid;
+            border-width: 4px 4px 4px 0px;
+            border-radius: 0px 15px 15px 0px;
+        }
+
+        .enemy-fullHealth {
+            background-color: red;
+            height: 30px;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .enemy-health-remaining {
+            position: absolute;
+            background: #818CF8;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        .displayMsg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .restart-game{
+            margin-top: 40px;
+            margin-left: 30vw;
+        }
+        .restart-game>button{
+            padding: 5px;
+            border: 3px solid black;
+            background-color: rgb(182, 180, 180);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-container">
+        <div class="health-bar">
+            <div class="player-health-bar">
+                <div class="player-fullHealth"></div>
+                <div class="player-health-remaining"></div>
+            </div>
+            <div class="timer">10</div>
+            <div class="enemy-health-bar">
+                <div class="enemy-fullHealth"></div>
+                <div class="enemy-health-remaining"></div>
+            </div>
+        </div>
+        <div class="displayMsg"></div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="restart-game"><button onclick="window.location.reload()">Restart</button></div>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="/index.js"></script>
+
+</body>
+
+</html>
